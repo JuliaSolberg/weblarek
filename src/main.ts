@@ -5,6 +5,7 @@ import { BuyerModel } from './components/models/BuyerModel';
 import { apiProducts } from './utils/data';
 import { Api } from './components/base/Api';
 import { WebLarekApi } from './components/api/WebLarekApi';
+import { API_URL } from './utils/constants';
 
 // Проверка CatalogModel
 const catalogModel = new CatalogModel();
@@ -55,7 +56,7 @@ console.log('Данные покупателя после очистки: ', buy
 
 
 // получение данных с сервера
-const baseApi = new Api(import.meta.env.VITE_API_ORIGIN);
+const baseApi = new Api(API_URL);
 const webLarek = new WebLarekApi(baseApi);
 
 webLarek.getProducts()
